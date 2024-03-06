@@ -32,7 +32,6 @@ class TestSC24Repo(unittest.TestCase):
         response = requests.get(BASE_URL)
         repo_data = response.json()
         self.assertIn("created_at", repo_data)
-        # Assuming we want to check if the repo was created within last month
         self.assertGreaterEqual(repo_data["created_at"], "2024-02-29T10:06:50Z")
 
     def test_repo_not_archived(self):

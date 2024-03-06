@@ -32,7 +32,6 @@ class TestGitHubMyRepo(unittest.TestCase):
         response = requests.get(BASE_URL)
         repo_data = response.json()
         self.assertIn("created_at", repo_data)
-        # Assuming we want to check if the repo was created within last month
         self.assertGreaterEqual(repo_data["created_at"], "2023-12-03T10:17:27Z")
 
     def test_repo_not_archived(self):
